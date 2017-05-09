@@ -1,31 +1,30 @@
-InSAR Velocities
-================
+Radar Velocities (2014)
+=======================
+*by Ryan Cassotto*
 
-Author: Ryan Cassotto
+<span style="background-color: #FFFF00">This is a metadata-only repository. Data are available directly from the original author.</span>
 
-## Velocity magnitudes
+## Speed
 
-Velocities (m / day) are provided as magnitudes in GeoTIFF format with WGS84 UTM Zone 6N coordinates. Files have names like:
+Glacier speeds (m / day) are provided in GeoTIFF format with WGS84 UTM Zone 6N coordinates:
 
-`./GeoTIFFs/Columbia_speed_YYYYMMDD_HHMM_VtrueFilt.tif`
+`data/speed_YYYYMMDDHHMM.tif`
 
-where the date and time, in format `YYYYMMDD_HHMM` is the median (in UTC) of the measurement interval. Although radar images were collected every 3 minutes, they were stacked in ~15 minute intervals to reduce noise.
+where the date and time, in format `YYYYMMDDHHMM`, is the median (in UTC) of the measurement interval. Although radar images were collected every 3 minutes, they were stacked in ~15 minute intervals to reduce noise.
 
-The GeoTIFFs have 10 m post spacing (tri-scattered interpolated from the raw data). However, the radar used had a range resolution of 75 cm and azimuth resolution of 8 m per 1 km (so ~40 m on the glacier).
+The data have a 10 m post spacing (tri-scattered interpolated from the raw data). However, the radar used had a range resolution of 75 cm and azimuth resolution of 8 m per 1 km (so ~40 m on the glacier).
 
-## Velocity directions
+## Direction
 
-`./Alpha_TrueFlowAngles.mat`
-Matlab data file containing the average velocity directions over the observation period (used to convert the original line-of-sight velocities to horizontal velocities). `AlphaCorr.angles` are degrees counterclockwise from east (+x UTM axis) and referenced to the lower left hand corner of the image. These were measured by speckle tracking of the radar intensity images.
+The directions of motion are provided, in the same raster format, as radians counterclockwise from east (+x UTM axis):
 
-`./Alpha_TrueFlowAngles.png`
-Velocity directions superimposed on a radar intensity image.
+`data/direction.tif`
 
-Velocity components are calculated from the flow direction `alpha` and velocity magnitude `V` as follows:
+These were determined by speckle tracking of the beginning and end radar intensity images, and thus represent an average over the observation period. Velocity components can be calculated as:
 
 ```
-Vx = V * cos(alpha)
-Vy = V * sin(alpha)
+Vx = speed * cos(direction)
+Vy = speed * sin(direction)
 ```
 
 ## Radar metadata
