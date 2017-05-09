@@ -1,0 +1,6 @@
+# Data files
+data/
+sources/
+
+# Mac OS X
+.DS_Store
