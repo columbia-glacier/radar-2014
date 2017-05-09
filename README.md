@@ -2,7 +2,7 @@ Radar Velocities (2014)
 =======================
 *by Ryan Cassotto*
 
-<span style="background-color: #FFFF00">This is a metadata-only repository. Data are available directly from the original author.</span>
+<span style="background-color: #FFFF00">This is a metadata-only repository. Data are only available from the author.</span>
 
 ## Speed
 
