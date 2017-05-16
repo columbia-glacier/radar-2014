@@ -32,5 +32,5 @@ Vy = speed * sin(direction)
 Radar position (WGS84), from the radar raw image parameter file:
 
 | Latitude (°) | Longitude (°) | Ellipsoidal height (m) |
-| --- | --- | --- | --- | --- |
+| --- | --- | --- |
 | 61.11993000 | -147.04345667 | 398.90000 |
